@@ -33,7 +33,8 @@ sub peak_elements {
        my $num = get_random_num();
        if ( $a[$_-1] != $num ) {
         push @a, $num;
-       }    
+       }
+    
 }
 }
 
