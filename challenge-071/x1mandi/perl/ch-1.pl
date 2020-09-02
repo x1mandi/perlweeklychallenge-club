@@ -22,19 +22,28 @@ my $N = $ARGV[0];
 
 die "ERROR: input not defined!" unless defined $N;
 die "ERROR: $N is not greater than 1" unless ($N > 1);
-
+4
 peak_elements();
 
 sub peak_elements {
     #Filling up the array with random numbers
     my @a;
+    my @peak;
+    #Add initial value to the first index of the array.
     $a[0] = get_random_num();
-    for (0..$N) {
-       my $num = get_random_num();
-       if ( $a[$_-1] != $num ) {
+    for ( 1..( $N -1 )) {
+      my $num = get_random_num();
+      #in each iteration compare the generated number with the previous element. 
+      if ( $a[$_-1] != $num ) {
         push @a, $num;
-       }    
-}
+       }
+    }
+#     if ( $a[0] < $a[1] ) {
+#         push @peak, $a[0]; 
+#       }
+    
+    say Dumper \@a;
+    say Dumper \@peak;
 }
 
 
